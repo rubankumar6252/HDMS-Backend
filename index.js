@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = process.env.MONGO_URL;
 mongoose.connect(db)
   .then(() => console.log('Database Connected'))
-  .catch((e) => console.log('error'))
+  .catch((e) => console.log('Error connecting to database:', e.message));
 
 app.use('/api', Admin);
 app.use('/api', SubAdmin);
